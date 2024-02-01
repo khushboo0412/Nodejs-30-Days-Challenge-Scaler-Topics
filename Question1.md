@@ -5,8 +5,22 @@ Create a function `readFileContent(filePath)` that takes the path to a file as i
 
 **Function Signature:**
 ```javascript
-function readFileContent(filePath) {
-    // Implementation
+
+function readFileContent(filePath){
+  //Implementation
+  fs.readFile(filePath,'utf8', (err,data)=>{
+    if (err) {
+      console.log(err)
+    } else {
+      console.log('file Content: \n' + data+'\n');
+    }
+  });
+
+
+// Test Cases
+readFileContent('file1.txt')
+readFileContent('empty-file.txt')
+readFileContent('nonexistent-file.txt')
 }
 ```
 
